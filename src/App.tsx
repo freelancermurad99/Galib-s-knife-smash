@@ -12,6 +12,7 @@ import {
   loadingStop,
   happytime,
 } from "./game/crazySdk";
+import galibImg from "./assets/galib.jpg";
 
 type Screen = "menu" | "playing" | "paused" | "gameover" | "shop" | "scores";
 
@@ -536,9 +537,9 @@ function MenuScreen({
 }) {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-between overflow-hidden p-6">
-      {/* Background photo (public/galib.jpg). Hidden gracefully if missing. */}
+      {/* Background photo. Imported directly so it bundles into the single file. */}
       <img
-        src="/galib.jpg"
+        src={galibImg}
         alt=""
         aria-hidden="true"
         onError={(e) => {
