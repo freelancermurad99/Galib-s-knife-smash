@@ -207,6 +207,15 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screen]);
 
+  const continueGame = useCallback(() => {
+    sfx.click();
+    setScreen("playing");
+    setScore(0);
+    setCombo(0);
+    engineRef.current?.resize();
+    engineRef.current?.start(Math.max(0, data.bestLevel - 1));
+  }, [data.bestLevel]);
+
   const startGame = useCallback(() => {
     sfx.click();
     setScreen("playing");
@@ -349,7 +358,7 @@ export default function App() {
           <MenuScreen
             data={data}
             equippedSkinId={data.equipped}
-            onPlay={startGame}
+            onPlay={continueGame}
             onShop={() => {
               sfx.click();
               setScreen("shop");
@@ -590,7 +599,9 @@ function MenuScreen({
       </div>
 
       <div className="relative z-10 flex w-full max-w-xs flex-col gap-3">
-        <PrimaryBtn onClick={onPlay}>▶ Play</PrimaryBtn>
+        <PrimaryBtn onClick={onPlay}>
+          {data.bestLevel > 1 ? `▶ Continue (Lv ${data.bestLevel})` : "▶ Play"}
+        </PrimaryBtn>
         <div className="grid grid-cols-2 gap-3">
           <SecondaryBtn onClick={onShop}>🗡 Shop</SecondaryBtn>
           <SecondaryBtn onClick={onScores}>🏆 Scores</SecondaryBtn>
