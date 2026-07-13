@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CrazyGames Ready](https://img.shields.io/badge/CrazyGames-Ready-blue.svg)](https://crazygames.com)
 A polished, fast-paced HTML5 knife-throwing arcade game built with **React**, **Vite**, **Tailwind CSS**, and **HTML5 Canvas**. Throw knives at a spinning target, avoid hitting other blades, slice apples for bonus coins, and take down epic bosses — all at a buttery 60fps on both desktop and mobile.
-> 🎮 **Play it now:** [Live Demo](https://your-demo-link-here.com) *(replace with your hosted link)*
+> 🎮 **Play it now:** [Live Demo](https://freelancermurad99.github.io/Galib-s-knife-smash/dist/) *(replace with your hosted link)*
 ---
 ## ✨ Features
 - 🎯 **Tight Core Loop** — tap or press Space to throw; the first 10 seconds are instantly fun
